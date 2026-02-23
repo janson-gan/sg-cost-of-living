@@ -1,0 +1,19 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.1 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.1">
+  <diagram name="Page-1" id="3qW7td5NijYIBBOjRdwZ">
+    <mxGraphModel dx="1026" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oVLF68x6LWSc7LKOBPLP-1" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/devops/API_Connections.svg;" value="Data Sources&lt;div&gt;data.gov.sg APIs&lt;/div&gt;&lt;div&gt;(HDB, COE, CPI)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="45.32" width="68" x="80" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="oVLF68x6LWSc7LKOBPLP-4" parent="1" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.nodejs_performance_platform;" value="" vertex="1">
+          <mxGeometry height="47.400000000000006" width="42" x="290" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="oVLF68x6LWSc7LKOBPLP-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Node JS Workers" vertex="1">
+          <mxGeometry height="30" width="110" x="500" y="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

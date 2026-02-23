@@ -1,0 +1,53 @@
+#--- This file is to tell GIT not to track those files or folder mentioned here ---
+
+#-- JavaScript Dependencies --
+# Created during "npm install"
+node_modules/
+
+#-- Python Virtual Environment --
+# Created during "python -m venv venv"
+pipeline/venv/
+
+#-- Python Cache Files --
+# These are not source code, auto generated when running .py files
+__pycache__
+*.pyc
+
+#-- Environment Variables --
+# Contain sensitive information like passwords, API keys, secret
+.env
+.env.local
+.env.production
+
+#-- Build Output --
+# Not source code, generated from "npm run build"
+client/build/
+client/dist/
+dist/
+
+#-- Logs --
+# Runtime output, not source code
+logs/
+*.log
+
+#-- Operating System Files --
+# macOS create .DS_Store in every folder
+# windows create Thumbs.db for image thumbnails
+# Not belongs to the project
+.DS_Store
+Thumbs.db
+
+#-- IDE/Editor Setting --
+# VS code settings
+.vscode/
+.idea/
+
+#-- Docker Volumes --
+# Database data stored locally Docker
+pgdata/
+
+#-- Test Coverage Report --
+# Generated during code test, not source code
+coverage/
+.coverage
+htmlcov/
