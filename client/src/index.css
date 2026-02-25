@@ -1,0 +1,12 @@
+/* Reset browser default styles */
+@tailwind base;
+/* Provide building blocks for common layout */
+@tailwind components;
+/* Utility classes like, p-4, text-xl, etc*/
+@tailwind utilities;
+
+/* Outline only appear for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid #1e40af;
+  outline-offset: 2px;
+}

@@ -1,0 +1,85 @@
+# Docker Compose configuration for development environment
+
+#===========================================
+# 1. PostgreSQL Database Service
+#===========================================
+
+# Services to run in development environment
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: sg_col_postgres
+    # Set environment variables for PostgreSQL configuration
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-Password12345}
+      POSTGRES_DB: ${DB_NAME:-sg_cost_living}
+      TZ: Asia/Singapore
+      # Container where postgres stores data
+      # Ensure data persistence even restarting the container
+      # Mount the migration scripts to initialize the database on startup
+      # Schemas and tables get created when the container starts for the first time
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d
+    # Expose PostgreSQL port to host machine for external access
+    # Connect to PostgreSQL from host machine using localhost:5432
+    ports:
+      - "5432:5432"
+    # Health check to ensure PostgreSQL is ready before accepting connections
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${DB_USER:-postgres} -d ${DB_NAME:-sg_cost_living} -h localhost",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  #===========================================
+  # 2. Redis Caching Service
+  #===========================================
+
+  redis:
+    image: redis:latest
+    container_name: sg_col_redis
+    ports:
+      - "6379:6379"
+    # Health check to ensure Redis is ready before accepting connections
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  #===========================================
+  # 3. Python ETL Pipeline Service
+  #===========================================
+
+  pipeline:
+    # Build the pipeline service using the Dockerfile located in the ./pipeline directory
+    build: ./pipeline
+    container_name: sg_col_pipeline
+    # Pipelines depend on PostgreSQL services to be healthy before starting
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # Environment variables for the pipeline service
+      PYTHONUNBUFFERED: 1
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-Password12345}
+      DB_NAME: ${DB_NAME:-sg_cost_living}
+
+    # Restart Docker containers automatically unless they are explicitly stopped
+    # This ensures that the services remain available even if they encounter temporary issues
+    # For the secheduler to keep running 24/7
+    restart: unless-stopped
+
+# Storage area for PostgreSQL data to ensure data persistence across container restarts
+# Data will not be lost when the container is stopped or removed, as it is stored in a Docker volume
+volumes:
+  pgdata:

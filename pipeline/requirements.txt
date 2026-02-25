@@ -1,0 +1,40 @@
+# pipeline/requirements.txt
+# This file lists the dependencies for the pipeline project.
+# You can install these dependencies using pip:
+# pip install -r requirements.txt
+
+# Data processing libraries
+# pandas is a powerful data manipulation library for Python.
+# Version 2.3.3 is specified to ensure compatibility with the pipeline code.
+pandas==2.3.3
+
+# Database connectors
+# psycopg2-binary is a PostgreSQL adapter for Python.
+# Version 2.9.9 is specified to ensure compatibility with the pipeline code.
+psycopg2-binary==2.9.9
+
+# HTTP requests library
+# requests is a simple and elegant HTTP library for Python.
+# Version 2.31.0 is specified to ensure compatibility with the pipeline code.
+# Make HTTP requests to data.gov.sg APIs.
+requests==2.31.0
+
+# Scheduling library
+# schedule is a simple, human-friendly, and Pythonic library for scheduling tasks.  
+# Version 1.2.1 is specified to ensure compatibility with the pipeline code.
+schedule==1.2.1
+
+# Environment variable management
+# python-dotenv is a library that allows you to read key-value pairs from a .env file and set them as environment variables.
+# Version 1.2.0 is specified to ensure compatibility with the pipeline code.
+python-dotenv==1.2.0
+
+# Logging library
+# loguru is a library that provides an easy-to-use and powerful logging system for Python.
+# Version 0.6.0 is specified to ensure compatibility with the pipeline code.
+loguru==0.7.3
+
+# Testing libraries
+# pytest is a testing framework for Python that allows you to write simple and scalable test cases.
+# Version 9.0.0 is specified to ensure compatibility with the pipeline code.
+pytest==9.0.0
