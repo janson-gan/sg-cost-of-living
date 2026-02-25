@@ -8,7 +8,7 @@ DB_CONFIG = {
     "port": os.environ.get("DB_PORT", "5432"),
     "dbname": os.environ.get("DB_NAME", "sg_cost_living"),
     "user": os.environ.get("DB_USER", "postgres"),
-    "password": os.environ.get("DB_PASSWORD", "Password12345")
+    "password": os.environ.get("DB_PASSWORD", "")
 }
 
 DATAGOV_BASE_URL = os.environ.get(
