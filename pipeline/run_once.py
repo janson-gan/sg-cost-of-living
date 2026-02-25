@@ -8,7 +8,7 @@ def run_pipeline_once():
 
     test_connection()
 
-    logger.info("Pipeline run complete (ETL steps coming Day 2)")
+    logger.info("Pipeline run complete (ETL steps coming Phase 2)")
 
 if __name__ == "__main__":
     run_pipeline_once()

@@ -4,7 +4,7 @@ from utils.logger import logger
 from utils.db import test_connection
 
 def run_pipeline():
-    logger.info("Pipeline triggered - ETL jobs coming on Day 2")
+    logger.info("Pipeline triggered - ETL jobs coming on Phase 2")
 
 def main():
     logger.info("=" * 50)
