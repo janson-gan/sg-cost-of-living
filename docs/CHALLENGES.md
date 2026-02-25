@@ -1,6 +1,6 @@
 # Development Challenges Log
 
-## Day 1: Planning and Setup
+## Phase 1: Planning and Setup
 
 ### Challenge 1: npm Audit Vulnerabilities (Server)
 
