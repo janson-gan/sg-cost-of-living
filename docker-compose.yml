@@ -11,9 +11,9 @@ services:
     container_name: sg_col_postgres
     # Set environment variables for PostgreSQL configuration
     environment:
-      POSTGRES_USER: ${DB_USER:-postgres}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-Password12345}
-      POSTGRES_DB: ${DB_NAME:-sg_cost_living}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
       TZ: Asia/Singapore
       # Container where postgres stores data
       # Ensure data persistence even restarting the container
@@ -68,11 +68,11 @@ services:
     environment:
       # Environment variables for the pipeline service
       PYTHONUNBUFFERED: 1
-      DB_HOST: postgres
-      DB_PORT: 5432
-      DB_USER: ${DB_USER:-postgres}
-      DB_PASSWORD: ${DB_PASSWORD:-Password12345}
-      DB_NAME: ${DB_NAME:-sg_cost_living}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
 
     # Restart Docker containers automatically unless they are explicitly stopped
     # This ensures that the services remain available even if they encounter temporary issues
