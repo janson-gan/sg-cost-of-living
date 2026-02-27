@@ -15,3 +15,5 @@ DATAGOV_BASE_URL = os.environ.get(
     "DATAGOV_BASE_URL",
     "https://data.gov.sg/api/action/datastore+search",
 )
+
+DATAGOV_API_KEY = os.environ.get("DATAGOV_API_KEY")

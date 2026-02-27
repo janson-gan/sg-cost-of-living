@@ -27,6 +27,14 @@ CREATE TABLE IF NOT EXISTS raw_data.coe_results (
     batch_id VARCHAR(50)
 );
 
+CREATE TABLE IF NOT EXISTS raw_data.cpi_data (
+    id SERIAL PRIMARY KEY,
+    source_data JSONB NOT NULL,
+    ingested_at TIMESTAMP DEFAULT NOW(),
+    source VARCHAR(100) DEFAULT 'data.gov.sg',
+    batch_id VARCHAR(50)
+);
+
 -- =====================================
 -- CLEANED (Silver) Tables
 -- Store cleaned and transformed data with proper data types and structure
